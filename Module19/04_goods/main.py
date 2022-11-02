@@ -5,6 +5,7 @@ goods = {
     'Стул': '45678',
 }
 
+
 store = {
     '12345': [
         {'quantity': 27, 'price': 42},
@@ -24,4 +25,14 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+for item in goods:
+    item_name = item
+    item_code = goods[item_name]
+    item_quantity = 0
+    item_total_amount = 0
+
+    for i in range(0, len(store[item_code])):
+        item_quantity += store[item_code][i]['quantity']
+        item_total_amount += store[item_code][i]['quantity'] * store[item_code][i]['price']
+
+    print(item_name, '-', item_quantity, 'штук,', 'стоимость', item_total_amount, 'рублей')
