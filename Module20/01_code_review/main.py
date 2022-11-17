@@ -22,23 +22,21 @@ students = {
 
 def f(dict):
     lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
+    for i in dict.values():
+        lst.extend(i['interests'])
+    # lst = [', '.join(x['interests']) for x in dict.values()] хотел сделать код выше через comprehensions,
+    # но получается немного неправильно. Буду рад если подскажите как можно его упростить(если можно конечно).
+    cnt = [len(x['surname']) for x in dict.values()]
+    cnt = sum(cnt)
     return lst, cnt
 
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
+pairs = [(index, value['age']) for index, value in students.items()]
+print('Список пар "ID студента — возраст":', pairs)
 
 
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
 
-# TODO исправить код
+my_lst, lenn = f(students)
+print('Полный список интересов всех студентов:', my_lst)
+print('Общая длина всех фамилий студентов:', lenn)
+
