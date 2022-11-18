@@ -5,4 +5,5 @@ def tpl_sort(cort):
     corted = sorted(list(cort))
     return tuple(corted)
 
+
 print(tpl_sort((6, 3, -1, 8, 4, 10, -5)))
