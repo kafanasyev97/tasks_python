@@ -1,7 +1,6 @@
-def need_func(a, b):
-    spis = [(a[i_elem], b[i_elem])
-             for i_elem in range(min(len(a), len(b)))]
-    return spis
+def need_func(*args):
+    minimum = min(len(elem) for elem in args)
+    return [tuple(i_element[index] for i_element in args) for index in range(minimum)]
 
 
 # syms_str = 'abcd'
