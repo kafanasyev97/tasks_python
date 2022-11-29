@@ -11,7 +11,7 @@ for x in ssd:
         print(x, '\n')
 
 
-
+# Решение через функцию
 # def need_func(g, z):
 #     need_file = open(g, z)
 #     one_list = []
