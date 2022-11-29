@@ -14,6 +14,7 @@ speakers_file.close()
 speakers_file_2 = open('answer.txt', 'w')
 speakers_file_2.write(summ)
 speakers_file_2.close()
+
 speakers_file_3 = open('answer.txt', 'r')
 result = speakers_file_3.read()
 print('Содержимое файла answer.txt\n', result)
