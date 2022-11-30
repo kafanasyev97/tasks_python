@@ -1,15 +1,22 @@
 import os
 
 
+def find_file(res, string):
+    help_file = open(res, 'w')
+    help_file.write(string)
+    help_file.close()
+
+    total = open(res, 'r')
+    total_text = total.read()
+    total.close()
+    print('Содержимое файла:\n', total_text)
 
 
 text = input('Введите строку: ')
 user = input('Куда хотите сохранить документ? Введите последовательность папок (через пробел): ').split()
 file_name = input('Введите имя файла: ')
 dir_path = os.path.abspath(os.path.sep)
-print(dir_path)
 path_text = os.path.join(dir_path, os.path.sep.join(user))
-print(path_text)
 
 result = os.path.join(path_text, file_name)
 if os.path.exists(path_text):
@@ -17,16 +24,14 @@ if os.path.exists(path_text):
         if i_elem == file_name:
             answer = input('Вы действительно хотите перезаписать файл? ').lower()
             if answer == 'да':
-                help_file = open(result, 'w')
-                help_file.write(text)
-                print('Файл успешно сохранён!')
-                help_file.close()
-                total = open(result, 'r')
-                total_text = total.read()
-                total.close()
-                print('Содержимое файла:\n', total_text)
+                print('Файл успешно перезаписан!')
+                find_file(result, text)
+                break
             else:
                 print('Нет так нет.')
-
+                break
+    else:
+        print('Файл успешно сохранён!')
+        find_file(result, text)
 else:
     print('Такого пути нет на диске.')
