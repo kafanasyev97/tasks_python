@@ -23,3 +23,4 @@ for x in letters:
         letters.remove(x)
 print('Количество слов в файле:', len(letters))
 second_file.close()
+
