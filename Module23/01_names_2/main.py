@@ -11,6 +11,6 @@ with open('people.txt', 'r', encoding='utf-8') as file:
             error += str(esc) + '\n'
         count += len(x.strip())
         string += 1
-print('Общее количество символов:', count)
+print(f'Общее количество символов: {count}.')
 with open('errors.log', 'w', encoding='utf-8') as finish_file:
     finish_file.write(error)
