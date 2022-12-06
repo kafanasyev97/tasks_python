@@ -10,7 +10,7 @@ class Student:
 
 
 ssd = []
-for x in range(2):
+for x in range(10):
     name_user = input('Введите инициалы пользователя: ')
     number_group_user = int(input('Введите номер группы: '))
     grade_user = list(map(int, input('Введите оценки(через пробел): ').split()))
