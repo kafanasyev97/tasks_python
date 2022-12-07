@@ -92,7 +92,7 @@ class Clay:
     title = 'Глина'
 
 
-f = Water()
-s = Brick()
+f = Fire()
+s = Air()
 a = f + s
 print(a.title)
