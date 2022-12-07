@@ -1,5 +1,6 @@
 class Fire:
-    title = 'Огонь'
+    def __str__(self):
+        return 'Огонь'
 
     def __add__(self, other):
         if isinstance(other, Air):
@@ -15,7 +16,8 @@ class Fire:
 
 
 class Air:
-    title = 'Воздух'
+    def __str__(self):
+        return 'Воздух'
 
     def __add__(self, other):
         if isinstance(other, Water):
@@ -29,7 +31,8 @@ class Air:
 
 
 class Water:
-    title = 'Вода'
+    def __str__(self):
+        return 'Вода'
 
     def __add__(self, other):
         if isinstance(other, Air):
@@ -45,6 +48,9 @@ class Water:
 
 
 class Earth:
+    def __str__(self):
+        return 'Земля'
+
     def __add__(self, other):
         if isinstance(other, Water):
             return Dirt()
@@ -57,42 +63,51 @@ class Earth:
 
 
 class Shtorm:
-    title = 'Шторм'
+    def __str__(self):
+        return 'Шторм'
 
 
 class Steam:
-    title = 'Пар'
+    def __str__(self):
+        return 'Пар'
 
 
 class Dirt:
-    title = 'Грязь'
+    def __str__(self):
+        return 'Грязь'
 
 
 class Lightning:
-    title = 'Молния'
+    def __str__(self):
+        return 'Молния'
 
 
 class Dust:
-    title = 'Пыль'
+    def __str__(self):
+        return 'Пыль'
 
 
 class Lava:
-    title = 'Лава'
+    def __str__(self):
+        return 'Лава'
 
 
 class Brick:
-    title = 'Кирпич'
+    def __str__(self):
+        return 'Кирпич'
 
 
 class Sand:
-    title = 'Песок'
+    def __str__(self):
+        return 'Песок'
 
 
 class Clay:
-    title = 'Глина'
+    def __str__(self):
+        return 'Глина'
 
 
 f = Fire()
 s = Air()
 a = f + s
-print(a.title)
+print(a)
