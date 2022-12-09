@@ -3,10 +3,9 @@ class Student:
         self.name = name
         self.number_group = number_group
         self.progress = progress
-        self.average = sum(progress) / len(progress)
 
     def sort_by_list(self):
-        return self.average
+        return sum(self.progress) / len(self.progress)
 
 
 ssd = []
