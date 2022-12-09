@@ -55,8 +55,7 @@ field = Board()
 
 
 counter = 0
-win = False
-while not win:
+while True:
     field.draw_board()
     if counter % 2 == 0:
         player_1.take_input()
@@ -67,7 +66,6 @@ while not win:
         tmp = field.check_win()
         if tmp:
             print(tmp, "выиграл!")
-            win = True
             break
     if counter == 9:
         print("Ничья!")
