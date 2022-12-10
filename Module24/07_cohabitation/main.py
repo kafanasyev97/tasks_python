@@ -1,34 +1,32 @@
 import random
 
 
-class House:
+class Person:
     food = 50
     money = 0
 
-
-class Person:
     def __init__(self, name):
         self.name = name
         self.satiety = 50
 
     def eat(self):
         self.satiety += 1
-        House.food -= 1
-        return f'Ест, сытость {self.satiety}, еда {House.food}'
+        Person.food -= 1
+        return f'Ест, сытость {self.satiety}, еда {Person.food}'
 
     def work(self):
         self.satiety -= 1
-        House.money += 1
-        return f'Работает, сытость {self.satiety}, деньги {House.money}'
+        Person.money += 1
+        return f'Работает, сытость {self.satiety}, деньги {Person.money}'
 
     def play(self):
         self.satiety -= 1
         return f'Играет, сытость {self.satiety}'
 
     def repast(self):
-        House.food += 1
-        House.money -= 1
-        return f'Идет в магазин, еда {House.food}, деньги {House.money}'
+        Person.food += 1
+        Person.money -= 1
+        return f'Идет в магазин, еда {Person.food}, деньги {Person.money}'
 
 def action(person):
     number_cubes = random.randint(1, 6)
@@ -37,9 +35,9 @@ def action(person):
         return True
     if person.satiety < 20:
         text = person.eat()
-    elif House.food < 10:
+    elif Person.food < 10:
         text = person.repast()
-    elif House.money < 50:
+    elif Person.money < 50:
         text = person.work()
     elif number_cubes == 1:
         text = person.work()
