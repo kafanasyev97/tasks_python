@@ -4,6 +4,12 @@ class Parent:
         self.age = age
         self.children = children
 
+    def ages(self):
+        for elem in self.children:
+            if self.age - elem.age < 16:
+                return False
+        return True
+
     def info_parent(self):
         print()
         print(self.name, self.age)
@@ -44,11 +50,11 @@ count_child = int(input('Введите кол-во детей: '))
 for _ in range(count_child):
     child_name = input('Введите имя ребенка: ')
     child_age = int(input('Введите возраст ребенка: '))
-    if parent_age - child_age < 16:
-        raise Exception
     ssd.append(Child(child_name, child_age))
 
 user_1 = Parent(parent_name, parent_age, ssd)
+if not user_1.ages():
+    raise Exception('Разница в возрасте меньше 16 лет!')
 user_1.info_parent()
 user_1.child_calmness()
 user_1.child_hunger()
