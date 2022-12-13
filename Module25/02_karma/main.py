@@ -2,6 +2,9 @@ import random
 
 
 class KillError(Exception):
+    """
+    Эти и последующие классы - собственные исключения
+    """
     pass
 
 
