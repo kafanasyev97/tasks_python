@@ -2,6 +2,14 @@ import random
 
 
 class Person:
+    """
+    Базовый класс, описывающий человека
+
+    Args:
+        __name(str): имя человека
+        __surname(str): фамилия человека
+        __age(int): возраст человека
+    """
     def __init__(self, name, surname, age):
         self.__name = name
         self.__surname = surname
@@ -9,16 +17,32 @@ class Person:
 
 
 class Employee(Person):
+    """
+    Класс Работник. Родитель Person
+    """
     def account_salary(self):
         pass
 
 
 class Manager(Employee):
+    """
+    Класс Менеджер. Родитель Работник
+    """
     def account_salary(self):
+        """
+        метод возвращает размер зарплаты
+        :return: 13000(int)
+        """
         return 13000
 
 
 class Agent(Employee):
+    """
+    Класс Агент. Родитель Работник
+
+    Attributes:
+        volume_sale(int): объем продаж
+    """
     volume_sale = 0
 
     def account_salary(self):
@@ -26,6 +50,12 @@ class Agent(Employee):
 
 
 class Worker(Employee):
+    """
+    Класс Рабочий. Родитель Работник
+
+    Attributes:
+        hours(int): количество часов
+    """
     hours = 0
 
     def account_salary(self):
