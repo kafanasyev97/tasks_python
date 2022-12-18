@@ -1,4 +1,4 @@
-def QHofstadter(s: list):
+def qhofstadter(s: list):
     a = s[:]
     count = 0
     if a != [1, 1]:
@@ -10,6 +10,6 @@ def QHofstadter(s: list):
         yield q
 
 
-user = QHofstadter([1, 1])
+user = qhofstadter([1, 1])
 for x in user:
     print(x, end=' ')
