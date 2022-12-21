@@ -13,7 +13,7 @@ def how_are_you(func: Callable) -> Callable:
 
 
 @how_are_you
-def test():
+def test() -> None:
     print('<Тут что-то происходит...>')
 
 
