@@ -1,8 +1,11 @@
 import datetime
+import functools
+from typing import Callable, Any
 
 
-def logging(func):
-    def wrapped_func(*args, **kwargs):
+def logging(func: Callable) -> Callable:
+    @functools.wraps(func)
+    def wrapped_func(*args, **kwargs) -> int:
         print(func.__name__)
         print(func.__doc__)
         try:
@@ -16,7 +19,7 @@ def logging(func):
 
 
 @logging
-def help_func():
+def help_func() -> Any:
     """Вспомогательная функция"""
     result = 3 / 0
     return result
