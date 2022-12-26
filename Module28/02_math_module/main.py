@@ -2,6 +2,7 @@ import math
 
 
 class MyMath:
+    """ Класс с различными математическими формулами"""
     @classmethod
     def circle_len(cls, radius: int) -> float:
         return 2 * math.pi * radius
