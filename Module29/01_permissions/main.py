@@ -1,5 +1,11 @@
-def check_permission(text):
-    def need_func(func):
+import functools
+from typing import Callable
+
+
+def check_permission(text: str) -> Callable:
+    def need_func(func: Callable) -> Callable:
+        functools.wraps(func)
+
         def wrapped_func(*args, **kwargs):
             try:
                 if text in user_permissions:
