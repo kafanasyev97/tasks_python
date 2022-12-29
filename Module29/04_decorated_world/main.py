@@ -1,4 +1,3 @@
-from typing import Callable
 import functools
 
 
@@ -8,6 +7,7 @@ def decorator_with_args_for_any_decorator(decorator_to_enhance):
             return decorator_to_enhance(func, *args, **kwargs)
         return decorator_wrapper
     return decorator_maker
+
 
 @decorator_with_args_for_any_decorator
 def decorated_decorator(func, *dec_args, **dec_kwargs):
