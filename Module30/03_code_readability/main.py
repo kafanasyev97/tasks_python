@@ -6,6 +6,7 @@ def is_prime(number):
             return False
     return True
 
+
 if __name__ == '__main__':
     result = [num for num in range(0, 1001) if is_prime(num)]
     print(result)
